@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Copy ID and PR
 // @namespace    https://www.monetate.com/
-// @version      1.0
+// @version      1.1
 // @description  Adds a context menu item to copy the issue and pull request IDs from a JIRA ticket.
 // @author       Andrew Littlefield
 // @match        https://monetate.atlassian.net/browse/*
@@ -16,7 +16,7 @@
     const issueLink = document.querySelector('#key-val');
     let toCopy = '';
     if(prLink) {
-        toCopy += 'PR' + prLink.href.match(/[0-9]*5/) + ' - ';
+        toCopy += 'PR' + prLink.href.match(/[0-9]{5}/) + ' - ';
     }
     toCopy += issueLink.getAttribute('data-issue-key');
 
